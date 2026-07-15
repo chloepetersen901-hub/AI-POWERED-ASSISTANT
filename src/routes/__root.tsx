@@ -74,10 +74,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "KP SKIN BY KIESHA — AI Beauty Assistant" },
       {
         property: "og:description",
-        content: "Elegant AI tools for skincare professionals and beauty entrepreneurs.",
+        content: "AI-powered productivity suite for KP SKIN BY KIESHA — email generation, consultation summaries, task planning, skincare research, and a beauty chat assistant.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "KP SKIN BY KIESHA — AI Beauty Assistant" },
+      { name: "twitter:description", content: "AI-powered productivity suite for KP SKIN BY KIESHA — email generation, consultation summaries, task planning, skincare research, and a beauty chat assistant." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/47b27078-e908-408e-a64b-7b060957e928/id-preview-93bc3acb--d7266fd4-1883-474b-8378-fc394565feb2.lovable.app-1784117386350.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/47b27078-e908-408e-a64b-7b060957e928/id-preview-93bc3acb--d7266fd4-1883-474b-8378-fc394565feb2.lovable.app-1784117386350.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
