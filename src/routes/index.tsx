@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Disclaimer } from "@/components/Disclaimer";
+import brandBoard from "@/assets/kp-brand-board.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Dashboard,
