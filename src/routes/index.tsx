@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { PageHeader } from "@/components/PageHeader";
 import { Disclaimer } from "@/components/Disclaimer";
+import brandBoard from "@/assets/kp-brand-board.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Dashboard,
@@ -106,6 +107,21 @@ function Dashboard() {
             </Link>
           ))}
         </div>
+      </section>
+
+      <section className="glass-card p-6 lg:p-8">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-primary">Brand Board</p>
+            <h2 className="font-display text-2xl mt-1">KP SKIN — Visual Identity</h2>
+          </div>
+        </div>
+        <img
+          src={brandBoard.url}
+          alt="KP SKIN BY KIESHA brand board — healthy skin, confident you"
+          className="w-full rounded-2xl border border-border"
+          loading="lazy"
+        />
       </section>
 
       <Disclaimer />
