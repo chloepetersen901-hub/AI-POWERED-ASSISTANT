@@ -55,6 +55,10 @@ export function AppShell({ children }: { children: ReactNode }) {
 
   useEffect(() => setOpen(false), [pathname]);
 
+  // Public pages render without the private studio sidebar
+  if (pathname === "/") return <>{children}</>;
+
+
   return (
     <div className="min-h-screen flex w-full">
       {/* Sidebar */}
