@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StudioRouteImport } from './routes/studio'
 import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as PlannerRouteImport } from './routes/planner'
@@ -19,6 +20,11 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 
+const StudioRoute = StudioRouteImport.update({
+  id: '/studio',
+  path: '/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SettingsRoute = SettingsRouteImport.update({
   id: '/settings',
   path: '/settings',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/planner': typeof PlannerRoute
   '/research': typeof ResearchRoute
   '/settings': typeof SettingsRoute
+  '/studio': typeof StudioRoute
   '/api/chat': typeof ApiChatRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/planner'
     | '/research'
     | '/settings'
+    | '/studio'
     | '/api/chat'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/planner'
     | '/research'
     | '/settings'
+    | '/studio'
     | '/api/chat'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/planner'
     | '/research'
     | '/settings'
+    | '/studio'
     | '/api/chat'
   fileRoutesById: FileRoutesById
 }
@@ -144,11 +156,19 @@ export interface RootRouteChildren {
   PlannerRoute: typeof PlannerRoute
   ResearchRoute: typeof ResearchRoute
   SettingsRoute: typeof SettingsRoute
+  StudioRoute: typeof StudioRoute
   ApiChatRoute: typeof ApiChatRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/studio': {
+      id: '/studio'
+      path: '/studio'
+      fullPath: '/studio'
+      preLoaderRoute: typeof StudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/settings': {
       id: '/settings'
       path: '/settings'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlannerRoute: PlannerRoute,
   ResearchRoute: ResearchRoute,
   SettingsRoute: SettingsRoute,
+  StudioRoute: StudioRoute,
   ApiChatRoute: ApiChatRoute,
 }
 export const routeTree = rootRouteImport
