@@ -14,7 +14,8 @@ import { PageHeader } from "@/components/PageHeader";
 import { Disclaimer } from "@/components/Disclaimer";
 import brandBoard from "@/assets/kp-brand-board.png.asset.json";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/studio")({
+  head: () => ({ meta: [{ title: "Studio — KP SKIN BY KIESHA" }, { name: "robots", content: "noindex, nofollow" }] }),
   component: Dashboard,
 });
 

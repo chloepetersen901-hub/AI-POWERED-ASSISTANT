@@ -19,7 +19,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
 const NAV = [
-  { to: "/", label: "Dashboard", icon: LayoutDashboard },
+  { to: "/studio", label: "Dashboard", icon: LayoutDashboard },
   { to: "/email", label: "Smart Email Generator", icon: Mail },
   { to: "/planner", label: "Appointment & Task Planner", icon: CalendarClock },
   { to: "/consultation", label: "Consultation Notes Summarizer", icon: ClipboardList },
